@@ -51,6 +51,21 @@ const restaurant = {
   },
 };
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) {
+  console.log(item);
+}
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+// restaurant.numGuests = 0;
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
+
+// const guestsCorrect = restaurant.numGuests ?? 10;
+// console.log(guestsCorrect);
 //
 // console.log('------or ----');
 // console.log(3 || 'jonas');
