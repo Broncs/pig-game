@@ -51,43 +51,79 @@ const restaurant = {
   },
 };
 
+//
+// console.log('------or ----');
+// console.log(3 || 'jonas');
+// console.log('' || 'jonas');
+// console.log(true || 0);
+// console.log(undefined || null);
+
+// console.log(undefined || 0 || '' || 'hello' || 23 || null);
+
+// restaurant.numGuests = 20;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+
+// const guests2 = restaurant.numGuests || 10;
+
+// console.log(guests1);
+// console.log(guests2);
+
+// console.log('------ AND -----');
+
+// console.log(0 && 'jonas');
+// console.log('jonas' && 0);
+
+// console.log('hello' && 23 && null && 'jonas');
+
+// practical
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushRoom', 'spinach');
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza('frango', 'catupiry');
+
+// console.log('' || ' bla bla bla');
+// console.log([] && 'This will return bcs arrays are true');
+// console.log(0 && 'This will NOT return bcs 0 is falsy');
+// console.log('' || null || 'this is the last,will return even if is falsy , ');
+
 /////////////  rest patters and parameters ///////
 
 // 1) destructuing
 //Spread, because on right side of =
-const arr = [1, 2, ...[3, 4]];
+// const arr = [1, 2, ...[3, 4]];
 
-//Rest, because on Left side of =
-const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
-console.log(a, b, others);
+// //Rest, because on Left side of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+// console.log(a, b, others);
 
-const [pizza, , risoto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risoto, otherFood);
+// const [pizza, , risoto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risoto, otherFood);
 
-// Objects
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// // Objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
-// 2) Functions
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  console.log(sum);
-};
-add(2, 3);
-add(5, 3, 7, 2);
-add(8, 2, 5, 4, 2, 1, 4);
+// // 2) Functions
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+// };
+// add(2, 3);
+// add(5, 3, 7, 2);
+// add(8, 2, 5, 4, 2, 1, 4);
 
-const x = [23, 5, 7];
-add(...x);
+// const x = [23, 5, 7];
+// add(...x);
 
-restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
-restaurant.orderPizza('mushrooms');
+// restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+// restaurant.orderPizza('mushrooms');
 
 // const arr = [7, 8, 9];
 // const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
