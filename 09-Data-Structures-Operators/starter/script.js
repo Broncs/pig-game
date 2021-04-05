@@ -30,6 +30,10 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(` here is your delicios pasta with ${ing1} , ${ing2} ${ing3}`);
   },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 
   openingHours: {
     thu: {
@@ -47,23 +51,61 @@ const restaurant = {
   },
 };
 
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
+/////////////  rest patters and parameters ///////
 
-const newArr = [1, 2, ...arr];
-console.log(...newArr);
+// 1) destructuing
+//Spread, because on right side of =
+const arr = [1, 2, ...[3, 4]];
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-console.log(newMenu);
+//Rest, because on Left side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, others);
 
-const mainMenuCopy = [...restaurant.mainMenu];
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+const [pizza, , risoto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risoto, otherFood);
 
-const str = 'jonas';
-const letters = [...str];
-console.log(...letters);
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// 2) Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 4, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
+
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
+
+// const newArr = [1, 2, ...arr];
+// console.log(...newArr);
+
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
+
+// const mainMenuCopy = [...restaurant.mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// const str = 'jonas';
+// const letters = [...str];
+// console.log(...letters);
 
 // const ingredients = [
 //   prompt('Lets make pasta! Ingredient 1? '),
@@ -75,13 +117,13 @@ console.log(...letters);
 // restaurant.orderPasta(...ingredients);
 
 //Objects
-const newRestaurant = { foundedin: 'baco', ...restaurant, founder: 'Guiseppe' };
-console.log(newRestaurant);
+// const newRestaurant = { foundedin: 'baco', ...restaurant, founder: 'Guiseppe' };
+// console.log(newRestaurant);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'Ristorante Roma';
-console.log(restaurant.name);
-console.log(restaurantCopy.name);
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Ristorante Roma';
+// console.log(restaurant.name);
+// console.log(restaurantCopy.name);
 
 // console.log(`${...str} bla bla `); // this will not work !
 
