@@ -47,6 +47,139 @@ const restaurant = {
   },
 };
 
+console.log('a+very+nice+string'.split('+'));
+console.log('Jonas Schmedtmann'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('jhonatan mendes de lima');
+
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+'));
+console.log(message.padEnd(20, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(43337819712387));
+console.log(maskCreditCard('43337897819714747'));
+
+const message2 = 'Bad waether... all departues delayed... ';
+console.log(message2.repeat(5));
+
+const planesInline = function (n) {
+  console.log(`There are ${n} planes in line ${'🪁'.repeat(n)}`);
+};
+
+planesInline(5);
+planesInline(3);
+
+// const airline = 'TAP Air Portugal';
+// const plane = 'A320';
+
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
+
+// const passenger = 'JOnAs'; // Jonas
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect =
+//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
+
+// const email = 'hello@jonas.io';
+// const loginEmail = '  Hello@Jonas.Io ';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// const normalizedEmail = loginEmail.toLowerCase().trim();
+// console.log(normalizedEmail);
+// console.log(email === normalizedEmail);
+
+// const priceUS = '288.97$';
+// const priceBRL = priceUS.replace('$', 'R$').replace('.', ',');
+// console.log(priceBRL);
+
+// const announcement = 'All passagers come to bording door 23. Boarding door 23!';
+
+// console.log(announcement.replaceAll('door', 'gate'));
+
+// //REGEX
+// console.log(announcement.replace(/door/g, 'gate'));
+
+// const planes = 'Airbus A320neo';
+// console.log(planes.includes('A320'));
+// console.log(planes.includes('Boeing'));
+// console.log(planes.startsWith('A320'));
+
+// if (planes.startsWith('Airbus') && planes.endsWith('neo')) {
+//   console.log('Part of the new airbus family');
+// }
+
+// const checkBaggage = function (items) {
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes('knife') || baggage.includes('gun')) {
+//     console.log('You are NOT allowed on board');
+//   } else {
+//     console.log('Welcome aboard!');
+//   }
+// };
+// checkBaggage('I have a laptop, some Food and a pocket Knife');
+// checkBaggage('Socks and camera');
+// checkBaggage('Got some snacks and a gun for protection');
+
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log('B737'[0]);
+// console.log(plane.length);
+
+// console.log(airline.indexOf('r'));
+// console.log(airline.lastIndexOf('r'));
+// console.log(airline.indexOf('Portugal'));
+
+// console.log(airline.slice(4));
+// console.log(airline.slice(4, 7));
+
+// console.log(airline.slice(0, airline.indexOf(' ')));
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
+// console.log(airline.slice(-2));
+
+// const checkMiddleSeat = function (seat) {
+//   const s = seat.slice(-1);
+
+//   if (s === 'B' || s === 'E') {
+//     console.log('You got the middle seat ');
+//   } else {
+//     console.log('you got lucky');
+//   }
+// };
+
+// checkMiddleSeat('11B');
+// checkMiddleSeat('23C');
+// checkMiddleSeat('3E');
+
 // const question = new Map([
 //   ['question', 'What is the best programming language in the world ?'],
 //   [1, 'C'],
