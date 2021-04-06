@@ -4,6 +4,25 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll(
+    '_',
+    ' '
+  )} from ${getCode(from)} to ${getCode(to)} (${time.replace(
+    ':',
+    'h'
+  )})`.padStart(50);
+  console.log(output);
+}
+
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const openingHours = {
   [weekdays[3]]: {
@@ -21,77 +40,77 @@ const openingHours = {
 };
 
 // Data needed for first part of the section
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  openingHours, // es6 enhanced obj literals
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+//   openingHours, // es6 enhanced obj literals
 
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-  orderDelivery({ starterIndex, mainIndex, time, address, number = 'S/N' }) {
-    console.log(
-      `order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time} n: ${number}`
-    );
-  },
+//   order(starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+//   orderDelivery({ starterIndex, mainIndex, time, address, number = 'S/N' }) {
+//     console.log(
+//       `order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time} n: ${number}`
+//     );
+//   },
 
-  orderPasta(ing1, ing2, ing3) {
-    console.log(` here is your delicios pasta with ${ing1} , ${ing2} ${ing3}`);
-  },
-  orderPizza(mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
-};
+//   orderPasta(ing1, ing2, ing3) {
+//     console.log(` here is your delicios pasta with ${ing1} , ${ing2} ${ing3}`);
+//   },
+//   orderPizza(mainIngredient, ...otherIngredients) {
+//     console.log(mainIngredient);
+//     console.log(otherIngredients);
+//   },
+// };
 
-console.log('a+very+nice+string'.split('+'));
-console.log('Jonas Schmedtmann'.split(' '));
+// console.log('a+very+nice+string'.split('+'));
+// console.log('Jonas Schmedtmann'.split(' '));
 
-const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+// const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
 
-const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
 
-console.log(newName);
+// console.log(newName);
 
-const capitalizeName = function (name) {
-  const names = name.split(' ');
-  const namesUpper = [];
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
 
-  for (const n of names) {
-    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
-    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
-  }
-  console.log(namesUpper.join(' '));
-};
+//   for (const n of names) {
+//     // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(' '));
+// };
 
-capitalizeName('jessica ann smith davis');
-capitalizeName('jhonatan mendes de lima');
+// capitalizeName('jessica ann smith davis');
+// capitalizeName('jhonatan mendes de lima');
 
-const message = 'Go to gate 23!';
-console.log(message.padStart(25, '+'));
-console.log(message.padEnd(20, '+'));
+// const message = 'Go to gate 23!';
+// console.log(message.padStart(25, '+'));
+// console.log(message.padEnd(20, '+'));
 
-const maskCreditCard = function (number) {
-  const str = number + '';
-  const last = str.slice(-4);
-  return last.padStart(str.length, '*');
-};
+// const maskCreditCard = function (number) {
+//   const str = number + '';
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, '*');
+// };
 
-console.log(maskCreditCard(43337819712387));
-console.log(maskCreditCard('43337897819714747'));
+// console.log(maskCreditCard(43337819712387));
+// console.log(maskCreditCard('43337897819714747'));
 
-const message2 = 'Bad waether... all departues delayed... ';
-console.log(message2.repeat(5));
+// const message2 = 'Bad waether... all departues delayed... ';
+// console.log(message2.repeat(5));
 
-const planesInline = function (n) {
-  console.log(`There are ${n} planes in line ${'🪁'.repeat(n)}`);
-};
+// const planesInline = function (n) {
+//   console.log(`There are ${n} planes in line ${'🪁'.repeat(n)}`);
+// };
 
-planesInline(5);
-planesInline(3);
+// planesInline(5);
+// planesInline(3);
 
 // const airline = 'TAP Air Portugal';
 // const plane = 'A320';
