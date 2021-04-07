@@ -226,7 +226,7 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
 */
-
+/*
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: Javascript', '1: Python', '2: rust', '3: C++'],
@@ -262,3 +262,39 @@ document
 poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 8] }, 'string');
 poll.displayResults.call({ answers: [5, 2, 3] });
+*/
+/*
+const runOnce = function () {
+  console.log('this will never run again');
+};
+runOnce();
+
+(function () {
+  console.log('Thil will never run again');
+  const isPrivate = 23;
+})();
+
+(() => console.log('Thil will never run again'))();
+*/
+// {
+//   const isPrivate = 23;
+// }
+// console.log(isPrivate); //error
+
+// -------------------CLOSUEES---------------------
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+console.dir(booker);
