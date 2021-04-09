@@ -252,6 +252,7 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 // LECTURES
 
+/*
 console.log(23 === 23.0);
 
 console.log(0.1 + 0.3);
@@ -278,3 +279,53 @@ console.log(Number.isFinite(+'20x'));
 console.log(Number.isInteger(23));
 console.log(Number.isInteger(1.0));
 console.log(Number.isInteger(1.1));
+*/
+/*
+const ingredients = ['olives', 'spinach'];
+
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => {
+    console.log(`Here is your pizza 🍕 with ${ing1} and ${ing2}`);
+  },
+  3000,
+  ...ingredients
+);
+*/
+// if (ingredients.includes('spinach')) clearInterval(pizzaTimer);
+
+// setInterval;
+// setInterval(() => {
+//   const now = new Date();
+//   console.log(now);
+// }, 1000);
+
+//DATES , create dates .
+/*
+const now = new Date();
+console.log(now);
+console.log(new Date('Apr 09 2020 16:45:03'));
+
+console.log(new Date('December 24, 2015'));
+
+console.log(new Date(account1.movementsDates[0]));
+
+console.log(new Date(1995, 5, 32));
+
+console.log(new Date(0));
+console.log(new Date(3 * 24 * 60 * 60 * 1000));
+*/
+//working with dates
+const future = new Date(1995, 5, 26);
+
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getTime());
+
+console.log(future.toISOString());
+
+console.log(new Date(804135600000));
+
+future.setFullYear(2400);
+
+console.log(future);
