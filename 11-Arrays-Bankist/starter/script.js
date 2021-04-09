@@ -557,7 +557,7 @@ labelBalance.addEventListener('click', function () {
   const movementsUI2 = [...document.querySelectorAll('.movements__value')];
 });
 */
-
+/*
 // 1.
 const bankDepositSum = accounts
   .flatMap(acc => acc.movements)
@@ -611,6 +611,7 @@ const converTitleCase = function (title) {
 console.log(converTitleCase('this is a nice title'));
 console.log(converTitleCase('this is a LONG title but not too long'));
 console.log(converTitleCase('and here is another title with an EXAMPLE'));
+*/
 
 //////////////////////////////
 ///////////////////////////////////////
@@ -643,3 +644,55 @@ const dogs = [
 
 GOOD LUCK 😀
 */
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+dogs.forEach(
+  dog => (dog.recommendedFood = Math.trunc(dog.weight ** 0.75 * 28))
+);
+
+const sarahDog = dogs.find(dog => dog.owners.includes('Sarah'));
+// console.log(
+//   `Is eating too ${
+//     sarahDog.curFood > sarahDog.recommendedFood ? 'much' : 'Little'
+//   }`
+// );
+
+const ownersEatTooMuch = dogs
+  .filter(dog => dog.curFood > dog.recommendedFood)
+  .flatMap(dog => dog.owners);
+// console.log(ownersEatTooMuch);
+
+const ownersEatTooLittle = dogs
+  .filter(dog => dog.curFood < dog.recommendedFood)
+  .flatMap(dog => dog.owners);
+// console.log(ownersEatTooLittle);
+
+// console.log(`${ownersEatTooMuch.join(' and ')} dogs eat too much!`);
+// console.log(`${ownersEatTooLittle.join(' and ')} dogs eat too little!`);
+
+console.log(dogs.some(dog => dog.curFood === dog.recommendedFood));
+
+const checkEatingOkay = dog =>
+  dog.curFood > dog.recommendedFood * 0.9 &&
+  dog.curFood < dog.recommendedFood * 1.1;
+
+console.log(dogs.some(checkEatingOkay));
+
+const dogsOkay = dogs.filter(checkEatingOkay);
+
+console.log(dogsOkay);
+
+const shallowCopy = dogs
+  .slice()
+  .sort((a, b) => a.recommendedFood - b.recommendedFood);
+
+console.log(shallowCopy);
+
+// 8. Create a shallow copy of the dogs array and sort it by recommended food portion in an ascending order (keep in mind that the portions are inside the array's objects)
+
+// HINT 2: Being within a range 10% above and below the recommended portion means: current > (recommended * 0.90) && current < (recommended * 1.10). Basically, the current portion should be between 90% and 110% of the recommended portion.
