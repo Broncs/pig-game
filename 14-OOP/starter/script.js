@@ -5,9 +5,10 @@ const Person = function (firstName, birthYear) {
   this.firstName = firstName;
   this.birthYear = birthYear;
 
-  this.calcAge = function () {
-    console.log(2037 - this.birthYear);
-  };
+  // NEVER DO THIS
+  // this.calcAge = function () {
+  //   console.log(2037 - this.birthYear);
+  // };
 };
 
 const jhonatan = new Person('Johnatan', 1995);
@@ -19,3 +20,20 @@ console.log(matilda);
 console.log(jack);
 
 console.log(jhonatan instanceof Person);
+
+// Prototypes
+console.log(Person.prototype);
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+jhonatan.calcAge();
+matilda.calcAge();
+
+console.log(jhonatan.__proto__);
+console.log(jhonatan.__proto__ === Person.prototype);
+
+// props;
+Person.prototype.species = 'home sapiens';
+
+console.log(jhonatan);
