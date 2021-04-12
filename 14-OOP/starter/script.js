@@ -10,8 +10,12 @@ const Person = function (firstName, birthYear) {
   //   console.log(2037 - this.birthYear);
   // };
 };
+// const jhonatan = new Person('Johnatan', 1995);
+// Person.hey = function () {
+//   console.log('Hey There 😂');
+// };
+// console.dir(Person);
 /*
-const jhonatan = new Person('Johnatan', 1995);
 console.log(jhonatan);
 const matilda = new Person('matilda', 2017);
 const jack = new Person('jack', 1975);
@@ -71,7 +75,7 @@ DATA CAR 2: 'Mercedes' going at 95 km/h
 
 GOOD LUCK 😀
 */
-
+/*
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -92,3 +96,101 @@ console.log(bmw.accelerate());
 console.log(bmw.accelerate());
 console.log(bmw.brake());
 console.log(bmw.accelerate());
+*/
+
+//class expression
+// const Personcl = class{
+
+// }
+/*
+// class declaration
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  // Methods will be added to .prototype property
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  // set a propery that already exist .
+  set fullName(name) {
+    console.log(name);
+    if (name.includes(' ')) this._fullName = name;
+    else alert(`${name} is not a full name !`);
+  }
+  get fullName() {
+    return this._fullName;
+  }
+  static hey() {
+    console.log('Hey there ');
+    console.log(this);
+  }
+}
+
+PersonCl.hey();
+const john = new PersonCl('Jhonatan Mendes', 1995);
+
+console.log(john);
+john.calcAge();
+console.log(john.age);
+
+console.log(john.__proto__ === PersonCl.prototype);
+
+john.greet();
+
+const walter = new PersonCl('Walter white', 1995);
+
+const account = {
+  owner: 'jonas',
+  movement: [200, 150, 120, 300],
+
+  get latest() {
+    return this.movement.slice(-1).pop();
+  },
+
+  set latest(mov) {
+    this.movement.push(mov);
+  },
+};
+
+console.log(account.latest);
+
+account.latest = 50;
+
+console.log(account.movement);
+*/
+
+const PersonProto = {
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+
+steven.name = 'Steven';
+steven.birthYear = 2002;
+
+steven.calcAge();
+console.log(steven.__proto__);
+
+const sarah = Object.create(PersonProto);
+
+sarah.init('Sarah', 2000);
+sarah.calcAge();
