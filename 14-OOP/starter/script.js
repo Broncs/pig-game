@@ -498,6 +498,7 @@ DATA CAR 1: 'Rivian' going at 120 km/h, with a charge of 23%
 
 GOOD LUCK 😀
 */
+/*
 class CarCl {
   constructor(make, speed) {
     this.make = make;
@@ -552,3 +553,4 @@ class EVCl extends CarCl {
 const carOne = new EVCl('Rivian', 120, 23);
 
 console.log(carOne.accelerate().accelerate().accelerate().chargeBaterry(50));
+*/
