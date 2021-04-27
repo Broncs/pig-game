@@ -84,6 +84,7 @@ class App {
     form.addEventListener('submit', this._newWorkout.bind(this));
     inputType.addEventListener('change', this._toggleElevationField);
     containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
+    console.log(this.#workouts);
   }
   _getPosition() {
     if (navigator.geolocation) {
@@ -111,7 +112,6 @@ class App {
     this.#map.on('click', this._showForm.bind(this));
 
     this.#workouts.forEach(work => {
-      this._renderWorkout(work);
       this._renderWorkoutMarker(work);
     });
   }
@@ -143,7 +143,7 @@ class App {
 
     e.preventDefault();
 
-    // get data from from'
+    // get data from form'
     const type = inputType.value;
     const distance = +inputDistance.value;
     const duration = +inputDuration.value;
@@ -177,7 +177,6 @@ class App {
       workout = new Cycling([lat, lng], distance, duration, elevation);
     }
     // add new obj to workout array
-
     this.#workouts.push(workout);
 
     //render workout on map as marker
@@ -251,7 +250,7 @@ class App {
               <span class="workout__unit">km/h</span>
             </div>
             <div class="workout__details">
-              <span class="workout__icon">👣</span>
+              <span class="workout__icon">🚲</span>
               <span class="workout__value">${workout.elevationGain}</span>
               <span class="workout__unit">m</span>
             </div>
@@ -261,6 +260,8 @@ class App {
     form.insertAdjacentHTML('afterend', html);
   }
   _moveToPopup(e) {
+    if (!this.#map) return;
+
     const workoutEl = e.target.closest('.workout');
 
     if (!workoutEl) return;
