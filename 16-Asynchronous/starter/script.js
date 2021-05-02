@@ -378,6 +378,7 @@ GOOD LUCK 😀
 */
 
 // Promisifying setTimeout
+/*
 const wait = function (seconds) {
   return new Promise(function (resolve) {
     setTimeout(resolve, seconds * 1000);
@@ -451,3 +452,29 @@ createImage('./img/img-1.jpg')
 //     console.log('3 second passed');
 //     return wait(1);
 //   });
+*/
+const getPosition = () => {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+const whereAmI = async () => {
+  // geolocation
+  const pos = await getPosition();
+  const { latitude: lat, longitude: lng } = pos.coords;
+
+  // Reverse geocoding
+  const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+  const dataGeo = await resGeo.json();
+
+  // Country data
+  const res = await fetch(
+    `https://restcountries.eu/rest/v2/name/${dataGeo.country}`
+  );
+
+  const data = await res.json();
+  renderCountry(data[0]);
+};
+whereAmI();
+console.log('First');
