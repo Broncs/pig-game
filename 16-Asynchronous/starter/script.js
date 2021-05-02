@@ -274,7 +274,7 @@ Promise.resolve('Resolved promise 2').then(res => {
 
 console.log('TEST end');
 */
-
+/*
 const lotteryPromise = new Promise(function (resolve, reject) {
   console.log('lotter draw is happening 🔮');
   setTimeout(function () {
@@ -311,3 +311,43 @@ wait(1)
 
 Promise.resolve('abc').then(x => console.log(x));
 Promise.reject(new Error('Problem !')).catch(x => console.error(x));
+*/
+
+const getPosition = () => {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+getPosition()
+  .then(res => console.log(res))
+  .catch(err => console.log(err));
+
+function whereAmI() {
+  getPosition()
+    .then(pos => {
+      const { latitude: lat, longitude: lng } = pos.coords;
+      return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+    })
+    .then(res => {
+      if (!res.ok)
+        throw new Error(`You reload the page to fast. (${res.status})`);
+
+      return res.json();
+    })
+    .then(data => {
+      console.log(`You are in ${data.city}, ${data.country}`);
+
+      return fetch(`https://restcountries.eu/rest/v2/name/${data.country}`);
+    })
+    .then(res => {
+      if (!res.ok) throw new Error(`Not found . `);
+      return res.json();
+    })
+    .then(data => {
+      renderCountry(data[0]);
+    })
+    .catch(err => console.error(`Something went wrong ${err.message}`));
+}
+
+btn.addEventListener('click', whereAmI);
