@@ -236,7 +236,7 @@ TEST COORDINATES 2: -33.933, 18.474
 
 GOOD LUCK 😀
 */
-
+/*
 function whereAmI(lat, lng) {
   fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
     .then(res => {
@@ -261,3 +261,14 @@ function whereAmI(lat, lng) {
 }
 
 whereAmI(19.037, 72.873);
+*/
+console.log('Test start');
+setTimeout(() => console.log('0 sec timer'), 0);
+Promise.resolve('Resolved promise 1').then(res => console.log(res));
+
+Promise.resolve('Resolved promise 2').then(res => {
+  for (let i = 0; i < 1000000; i++) {} // here it will take a lit bit , so the setTimeout() will be executed only after it ends , so it will no longer will be executed after 0 seconds .
+  console.log(res);
+});
+
+console.log('TEST end');
