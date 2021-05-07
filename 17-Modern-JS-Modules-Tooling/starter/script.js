@@ -85,3 +85,21 @@ if (module.hot) {
   module.hot.accept();
 }
 console.log('hi');
+
+class Person {
+  #greeting = 'hey';
+  constructor(namee) {
+    this.namee = namee;
+    console.log(`${this.#greeting}, ${this.namee}`);
+  }
+}
+
+const jonas = new Person('jonas');
+
+console.log('jonas' ?? null);
+
+console.log(cart.find(el => el.quantity >= 2));
+
+Promise.resolve('TEST').then(x => console.log(x));
+
+import 'core-js/stable';
