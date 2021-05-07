@@ -103,3 +103,6 @@ console.log(cart.find(el => el.quantity >= 2));
 Promise.resolve('TEST').then(x => console.log(x));
 
 import 'core-js/stable';
+// import 'core-js/stable/array/find'
+
+import 'regenerator-runtime/runtime';
