@@ -1,4 +1,4 @@
-20770
+20771
 103D:\project\complete-javascript-course\18-forkify\starter\node_modules\node-addon-api\benchmark\index.js121436361000000000 0
 126D:\project\complete-javascript-course\18-forkify\starter\node_modules\postcss-normalize-url\node_modules\ansi-styles\readme.md131628273600000000 0
 85D:\project\complete-javascript-course\18-forkify\starter\node_modules\snapdragon-node132651463397753950 1
@@ -73,7 +73,7 @@
 136D:\project\complete-javascript-course\18-forkify\starter\node_modules\postcss-normalize-whitespace\node_modules\postcss\lib\processor.js121436361000000000 0
 114D:\project\complete-javascript-course\18-forkify\starter\node_modules\http-proxy-middleware\dist\config-factory.js121436361000000000 0
 91D:\project\complete-javascript-course\18-forkify\starter\node_modules\lodash\_baseInvoke.js121436361000000000 0
-61D:\project\complete-javascript-course\18-forkify\starter\dist132651489685923432 1
+61D:\project\complete-javascript-course\18-forkify\starter\dist132652520001274508 1
 127D:\project\complete-javascript-course\18-forkify\starter\node_modules\postcss-unique-selectors\node_modules\postcss\lib\root.js121436361000000000 0
 98D:\project\complete-javascript-course\18-forkify\starter\node_modules\performance-now\package.json132651463506763905 0
 134D:\project\complete-javascript-course\18-forkify\starter\node_modules\@parcel\node-resolver-core\node_modules\micromatch\lib\.DS_Store132651463127947878 0
@@ -411,7 +411,7 @@
 129D:\project\complete-javascript-course\18-forkify\starter\node_modules\@parcel\transformer-html\node_modules\posthtml-parser\.idea132651463175377993 1
 115D:\project\complete-javascript-course\18-forkify\starter\node_modules\stylehacks\node_modules\has-flag\package.json132651463350357436 0
 118D:\project\complete-javascript-course\18-forkify\starter\node_modules\@parcel\transformer-json\node_modules\json5\dist132651463162210314 1
-77D:\project\complete-javascript-course\18-forkify\starter\src\js\controller.js132651489684853546 0
+77D:\project\complete-javascript-course\18-forkify\starter\src\js\controller.js132652520000493028 0
 74D:\project\complete-javascript-course\18-forkify\starter\node_modules\.bin132651475180951145 1
 106D:\project\complete-javascript-course\18-forkify\starter\node_modules\core-js\stable\array\virtual\sort.js121436361000000000 0
 82D:\project\complete-javascript-course\18-forkify\starter\node_modules\loader-utils132651463540772796 1
@@ -7042,6 +7042,7 @@
 102D:\project\complete-javascript-course\18-forkify\starter\node_modules\core-js\internals\descriptors.js121436361000000000 0
 104D:\project\complete-javascript-course\18-forkify\starter\node_modules\core-js\modules\esnext.set.join.js121436361000000000 0
 131D:\project\complete-javascript-course\18-forkify\starter\node_modules\regenerate-unicode-properties\General_Category\Punctuation.js121436361000000000 0
+80D:\project\complete-javascript-course\18-forkify\starter\dist\icons.d4a14980.svg132652520001214684 0
 125D:\project\complete-javascript-course\18-forkify\starter\node_modules\jsdom\lib\jsdom\living\generated\HTMLOptGroupElement.js121436361000000000 0
 84D:\project\complete-javascript-course\18-forkify\starter\node_modules\lodash\thru.js121436361000000000 0
 132D:\project\complete-javascript-course\18-forkify\starter\node_modules\postcss-modules-scope\node_modules\postcss\lib\previous-map.js121436361000000000 0
@@ -16236,7 +16237,7 @@
 116D:\project\complete-javascript-course\18-forkify\starter\node_modules\core-js\modules\esnext.reflect.has-metadata.js121436361000000000 0
 82D:\project\complete-javascript-course\18-forkify\starter\node_modules\csso\LICENSE121436361000000000 0
 100D:\project\complete-javascript-course\18-forkify\starter\node_modules\csso\node_modules\mdn-data\api132651463170211759 1
-79D:\project\complete-javascript-course\18-forkify\starter\dist\logo.5d271741.png132651489685843658 0
+79D:\project\complete-javascript-course\18-forkify\starter\dist\logo.5d271741.png132652520001254579 0
 100D:\project\complete-javascript-course\18-forkify\starter\node_modules\csso\node_modules\mdn-data\css132651463172256298 1
 105D:\project\complete-javascript-course\18-forkify\starter\node_modules\csso\node_modules\mdn-data\index.js121436361000000000 0
 101D:\project\complete-javascript-course\18-forkify\starter\node_modules\csso\node_modules\mdn-data\l10n132651463169473730 1
@@ -17321,7 +17322,7 @@
 105D:\project\complete-javascript-course\18-forkify\starter\node_modules\core-js\features\clear-immediate.js121436361000000000 0
 103D:\project\complete-javascript-course\18-forkify\starter\node_modules\core-js\features\composite-key.js121436361000000000 0
 106D:\project\complete-javascript-course\18-forkify\starter\node_modules\core-js\features\composite-symbol.js121436361000000000 0
-83D:\project\complete-javascript-course\18-forkify\starter\dist\index.250b04c7.js.map132651489685913485 0
+83D:\project\complete-javascript-course\18-forkify\starter\dist\index.250b04c7.js.map132652520001274508 0
 96D:\project\complete-javascript-course\18-forkify\starter\node_modules\core-js\features\data-view132651463193154626 1
 102D:\project\complete-javascript-course\18-forkify\starter\node_modules\core-js\features\dom-collections132651463193463824 1
 95D:\project\complete-javascript-course\18-forkify\starter\node_modules\core-js\features\index.js121436361000000000 0
@@ -20764,8 +20765,8 @@
 93D:\project\complete-javascript-course\18-forkify\starter\node_modules\.bin\node-gyp-build.ps1132651463625676022 0
 85D:\project\complete-javascript-course\18-forkify\starter\node_modules\.bin\parcel.cmd132651466220056911 0
 85D:\project\complete-javascript-course\18-forkify\starter\node_modules\.bin\parcel.ps1132651466220056911 0
-82D:\project\complete-javascript-course\18-forkify\starter\dist\favicon.80934ffe.png132651489685843658 0
-80D:\project\complete-javascript-course\18-forkify\starter\dist\index.1206e35b.css132651489685873572 0
-84D:\project\complete-javascript-course\18-forkify\starter\dist\index.1206e35b.css.map132651489685913485 0
-79D:\project\complete-javascript-course\18-forkify\starter\dist\index.250b04c7.js132651489685873572 0
-72D:\project\complete-javascript-course\18-forkify\starter\dist\index.html132651489685863602 0
+82D:\project\complete-javascript-course\18-forkify\starter\dist\favicon.80934ffe.png132652520001234625 0
+80D:\project\complete-javascript-course\18-forkify\starter\dist\index.1206e35b.css132652520001254579 0
+84D:\project\complete-javascript-course\18-forkify\starter\dist\index.1206e35b.css.map132652520001274508 0
+79D:\project\complete-javascript-course\18-forkify\starter\dist\index.250b04c7.js132652520001254579 0
+72D:\project\complete-javascript-course\18-forkify\starter\dist\index.html132652520001254579 0
