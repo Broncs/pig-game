@@ -462,11 +462,13 @@ const controlRecipes = async () => {
     await _modelJs.loadRecipe(id);
     _viewsRecipeViewJsDefault.default.render(_modelJs.state.recipe);
   } catch (error) {
-    alert(error);
+    console.log(error);
   }
 };
-controlRecipes();
-['hashchange', 'load'].forEach(ev => window.addEventListener(ev, controlRecipes));
+const init = function () {
+  _viewsRecipeViewJsDefault.default.addHandlerRender(controlRecipes);
+};
+init();
 
 },{"@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","core-js/stable":"1PFvP","regenerator-runtime/runtime":"62Qib","./model.js":"1hp6y","./views/recipeView.js":"9e6b9"}],"5gA8y":[function(require,module,exports) {
 "use strict";
@@ -12605,6 +12607,9 @@ class RecipeView {
     const markup = _classPrivateMethodGet(this, _generateMarkup, _generateMarkup2).call(this);
     _classPrivateMethodGet(this, _clear, _clear2).call(this);
     _classPrivateFieldGet(this, _parentElement).insertAdjacentHTML('afterbegin', markup);
+  }
+  addHandlerRender(handler) {
+    ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
 }
 function _clear2() {
