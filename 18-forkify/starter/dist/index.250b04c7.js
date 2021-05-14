@@ -462,7 +462,7 @@ const controlRecipes = async () => {
     await _modelJs.loadRecipe(id);
     _viewsRecipeViewJsDefault.default.render(_modelJs.state.recipe);
   } catch (error) {
-    console.log(error);
+    _viewsRecipeViewJsDefault.default.renderError();
   }
 };
 const init = function () {
@@ -12472,9 +12472,10 @@ const loadRecipe = async id => {
       ingredients: recipe.ingredients
     };
     console.log(state.recipe);
-  } catch (err) {
+  } catch (error) {
     // temp error
-    console.error(`${err} ✨✨✨`);
+    console.error(`${error} ✨✨✨`);
+    throw error;
   }
 };
 
@@ -12515,25 +12516,12 @@ const getJSON = async function (url) {
   }
 };
 
-},{"@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","./config.js":"6pr2F"}],"9e6b9":[function(require,module,exports) {
+},{"./config.js":"6pr2F","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y"}],"9e6b9":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 var _urlImgIconsSvg = require('url:../../img/icons.svg');
 var _urlImgIconsSvgDefault = _parcelHelpers.interopDefault(_urlImgIconsSvg);
 var _fractional = require('fractional');
-function _defineProperty(obj, key, value) {
-  if ((key in obj)) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
 function _classPrivateFieldGet(receiver, privateMap) {
   var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get");
   return _classApplyDescriptorGet(receiver, descriptor);
@@ -12574,6 +12562,8 @@ function _classApplyDescriptorSet(receiver, descriptor, value) {
 console.log(_fractional.Fraction);
 var _parentElement = /*#__PURE__*/new WeakMap();
 var _data = /*#__PURE__*/new WeakMap();
+var _errorMessage = /*#__PURE__*/new WeakMap();
+var _message = /*#__PURE__*/new WeakMap();
 var _clear = /*#__PURE__*/new WeakSet();
 var _generateMarkup = /*#__PURE__*/new WeakSet();
 var _generateMarkupIngredient = /*#__PURE__*/new WeakSet();
@@ -12590,21 +12580,57 @@ class RecipeView {
       writable: true,
       value: void 0
     });
-    _defineProperty(this, "renderSpinner", function () {
-      const markup = `
+    _errorMessage.set(this, {
+      writable: true,
+      value: 'We could not find that recipe. Please try another one!'
+    });
+    _message.set(this, {
+      writable: true,
+      value: ''
+    });
+  }
+  render(data) {
+    _classPrivateFieldSet(this, _data, data);
+    const markup = _classPrivateMethodGet(this, _generateMarkup, _generateMarkup2).call(this);
+    _classPrivateMethodGet(this, _clear, _clear2).call(this);
+    _classPrivateFieldGet(this, _parentElement).insertAdjacentHTML('afterbegin', markup);
+  }
+  renderSpinner() {
+    const markup = `
     <div class="spinner">
           <svg>
             <use href="${_urlImgIconsSvgDefault.default}#icon-loader"></use>
           </svg>
         </div>
   `;
-      _classPrivateFieldGet(this, _parentElement).innerHTML = '';
-      _classPrivateFieldGet(this, _parentElement).insertAdjacentHTML('afterbegin', markup);
-    });
+    _classPrivateMethodGet(this, _clear, _clear2).call(this);
+    _classPrivateFieldGet(this, _parentElement).insertAdjacentHTML('afterbegin', markup);
   }
-  render(data) {
-    _classPrivateFieldSet(this, _data, data);
-    const markup = _classPrivateMethodGet(this, _generateMarkup, _generateMarkup2).call(this);
+  renderError(message = _classPrivateFieldGet(this, _errorMessage)) {
+    const markup = `
+       <div class="error">
+            <div>
+              <svg>
+                <use href="${_urlImgIconsSvgDefault.default}#icon-alert-triangle"></use>
+              </svg>
+            </div>
+            <p>${message}</p>
+          </div>
+      `;
+    _classPrivateMethodGet(this, _clear, _clear2).call(this);
+    _classPrivateFieldGet(this, _parentElement).insertAdjacentHTML('afterbegin', markup);
+  }
+  renderMessage(message = _classPrivateFieldGet(this, _message)) {
+    const markup = `
+       <div class="message">
+            <div>
+              <svg>
+                <use href="${_urlImgIconsSvgDefault.default}#icon-smile"></use>
+              </svg>
+            </div>
+            <p>${message}</p>
+          </div>
+      `;
     _classPrivateMethodGet(this, _clear, _clear2).call(this);
     _classPrivateFieldGet(this, _parentElement).insertAdjacentHTML('afterbegin', markup);
   }
